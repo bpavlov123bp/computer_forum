@@ -1,5 +1,4 @@
 <?php
-//create_cat.php
 include 'config.php';
 include 'header.php';
 

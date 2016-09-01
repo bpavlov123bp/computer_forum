@@ -1,9 +1,7 @@
 <?php
-//category.php
 include 'config.php';
 include 'header.php';
 
-//first select the category based on $_GET['cat_id']
 $sql = "SELECT
 			cat_id,
 			cat_name,

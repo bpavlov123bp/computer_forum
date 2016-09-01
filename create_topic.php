@@ -13,8 +13,7 @@ else
     //the user is signed in
     if($_SERVER['REQUEST_METHOD'] != 'POST')
     {
-        //the form hasn't been posted yet, display it
-        //retrieve the categories from the database for use in the dropdown
+
         $sql = "SELECT
                     cat_id,
                     cat_name,
@@ -26,14 +25,12 @@ else
 
         if(!$result)
         {
-            //the query failed, uh-oh :-(
             echo 'Error while selecting from database. Please try again later.';
         }
         else
         {
             if(mysqli_num_rows($result) == 0)
             {
-                //there are no categories, so a topic can't be posted
                 if($_SESSION['user_level'] == 1)
                 {
                     echo 'You have not created categories yet.';
@@ -65,13 +62,11 @@ else
     }
     else
     {
-        //start the transaction
         $query  = "BEGIN WORK;";
         $result = mysqli_query($conn, $query);
 
         if(!$result)
         {
-            //Damn! the query failed, quit
             echo 'An error occured while creating your topic. Please try again later.';
         }
         else
@@ -93,7 +88,6 @@ else
             $result = mysqli_query($conn, $sql);
             if(!$result)
             {
-                //something went wrong, display the error
                 echo 'An error occured while inserting your data. Please try again later.' . mysqli_error($conn);
                 $sql = "ROLLBACK;";
                 $result = mysqli_query($conn, $sql);
