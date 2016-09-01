@@ -6,7 +6,6 @@ include 'header.php';
 echo '<h2>Create a topic</h2>';
 if($_SESSION['signed_in'] == false)
 {
-    //the user is not signed in
     echo 'Sorry, you have to be <a href="/forum/signin.php">signed in</a> to create a topic.';
 }
 else
@@ -103,7 +102,7 @@ else
             {
                 //the first query worked, now start the second, posts query
                 //retrieve the id of the freshly created topic for usage in the posts query
-                $topicid = mysqli_insert_id();
+                $topicid = mysqli_insert_id($conn);
 
                 $sql = "INSERT INTO
                             posts(post_content,

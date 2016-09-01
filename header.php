@@ -11,9 +11,9 @@
     <h1>Computer Forum</h1>
         <div id="wrapper">
             <div id="menu">
-                <a class="ítem" href="/forum/index.php">Home</a>
-                <a class="item" href="/forum/create_topic.php">Create a topic</a>
-                <a class="item" href="/forum/create_cat.php">Create a category</a>
+                <a class="ítem" href="/computer_forum/index.php">Home</a>
+                <a class="item" href="/computer_forum/create_topic.php">Create a topic</a>
+                <a class="item" href="/computer_forum/create_cat.php">Create a category</a>
 <div id="userbar">
 <div id="userbar">
     <?php
@@ -23,7 +23,7 @@
     }
     else
     {
-        echo '<a href="signin.php">Sign in</a> or <a href="sign up">create an account</a>.';
+        echo '<a href="signin.php">Sign in</a> or <a href="/computer_forum/signup.php">create an account</a>.';
     }
     ?>
 </div>
